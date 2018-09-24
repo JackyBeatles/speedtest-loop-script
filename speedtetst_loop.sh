@@ -2,7 +2,8 @@
 filename='ip.txt'
 
 #echo Start
-while read p; do 
-    python $PWD/speedtest-cli --server $p | grep 'Hosted by' 
+while read IP; do
+    python $PWD/speedtest-cli --server $IP | grep 'Hosted by'
+    echo "$IP"
     echo "==========================================================================="
 done < $filename
